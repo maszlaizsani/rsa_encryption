@@ -31,26 +31,14 @@ public class Main {
 
     }
 
-    /***
-     * A function that decrypts an already encrypted message.
-     * @param encrypted the encrypted message to be decrypted
-     * @param d the value d
-     * @param n the value n
-     * @return the original message
-     */
+
     static BigInteger decrypt(double encrypted, int d, int n){
         BigInteger encryptedMessage = BigDecimal.valueOf(encrypted).toBigInteger();
         BigInteger N = BigInteger.valueOf(n);
         return (encryptedMessage.pow(d)).mod(N);
     }
 
-    /***
-     * A function that encrypts the given message.
-     * @param n the value n
-     * @param e the value e
-     * @param message the message to be encrypted
-     * @return the encrypted message
-     */
+
     static double encrypt(int n, int e, int message) {
         return Math.pow(message, e) % n;
     }
